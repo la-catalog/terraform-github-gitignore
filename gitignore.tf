@@ -17,7 +17,7 @@ resource "github_repository_file" "terraform" {
   file                = ".gitignore"
   content             = file("./res/terraform.gitignore")
   commit_message      = "Update .gitignore"
-  commit_author       = "actions" 
+  commit_author       = "actions"
   commit_email        = "actions@github.com"
   overwrite_on_create = true
 }
