@@ -11,6 +11,8 @@ on:
 jobs:
   apply:
     runs-on: self-hosted
+    env:
+      GITHUB_TOKEN: ${{ secrets.github_token }}
     steps:
       - uses: actions/checkout@v3
 
