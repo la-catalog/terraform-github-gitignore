@@ -5,8 +5,6 @@ permissions:
 
 on:
   workflow_dispatch:
-  pull_request:
-    branches: [main]
 
 jobs:
   apply:
@@ -15,29 +13,11 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.github_token }}
     steps:
       - uses: actions/checkout@v3
-
-      # On pull request
-      - uses: dflook/terraform-plan@v1
-        with:
-          label: sensitive
-          variables: |
-            gh_token = "${{ secrets.github_token }}"
-      - uses: dflook/terraform-apply@v1
-        with:
-          label: sensitive
-          variables: |
-            gh_token = "${{ secrets.github_token }}"
-        if: ${{ github.event_name == 'pull_request' }}
-      
-      # On workflow dispatch
       - uses: dflook/terraform-apply@v1
         with:
           auto_approve: true
           variables: |
             gh_token = "${{ secrets.github_token }}"
-        if: ${{ github.event_name == 'workflow_dispatch' }}
-      
-      # Pull, add updated files, commit and push
       - uses: EndBug/add-and-commit@v9
         with:
           message: Workflow fix
