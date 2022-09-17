@@ -1,4 +1,9 @@
 name: Apply terraform changes
+permissions: write-all
+#   actions: write
+#   checks: write
+#   pull-requests: write
+#   repository-projects: write
 
 on:
   workflow_dispatch:
@@ -8,11 +13,6 @@ on:
 jobs:
   apply:
     runs-on: self-hosted
-    permissions: write-all
-#       actions: write
-#       checks: write
-#       pull-requests: write
-#       repository-projects: write
     steps:
       - uses: actions/checkout@v3
 
