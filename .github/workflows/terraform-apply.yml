@@ -19,10 +19,12 @@ jobs:
       # On pull request
       - uses: dflook/terraform-plan@v1
         with:
+          label: sensitive
           variables: |
             gh_token = "${{ secrets.github_token }}"
       - uses: dflook/terraform-apply@v1
         with:
+          label: sensitive
           variables: |
             gh_token = "${{ secrets.github_token }}"
         if: ${{ github.event_name == 'pull_request' }}
