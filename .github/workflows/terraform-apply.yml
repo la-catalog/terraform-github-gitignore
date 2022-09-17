@@ -1,7 +1,8 @@
 name: Apply terraform changes
 permissions:
 #   actions: write
-  checks: write
+#   checks: write
+  contents: write
 #   pull-requests: write
 
 on:
