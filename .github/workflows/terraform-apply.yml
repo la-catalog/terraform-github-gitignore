@@ -9,9 +9,10 @@ jobs:
   apply:
     runs-on: self-hosted
     permissions:
-      checks: read|write
-      pull-requests: read|write
-      repository-projects: read|write
+      actions: write
+      checks: write
+      pull-requests: write
+      repository-projects: write
     steps:
       - uses: actions/checkout@v3
 
