@@ -9,6 +9,7 @@ jobs:
   apply:
     runs-on: self-hosted
     permissions:
+      checks: write
       pull-requests: write
       repository-projects: write
     steps:
