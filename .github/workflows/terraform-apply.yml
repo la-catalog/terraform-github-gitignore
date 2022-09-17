@@ -1,9 +1,9 @@
 name: Apply terraform changes
-permissions: write-all
+permissions:
 #   actions: write
 #   checks: write
 #   pull-requests: write
-#   repository-projects: write
+  repository-projects: write
 
 on:
   workflow_dispatch:
