@@ -5,8 +5,8 @@ resource "github_repository_file" "python" {
   file                = ".gitignore"
   content             = file("./res/python.gitignore")
   commit_message      = "Update .gitignore"
-  commit_author       = "actions"
-  commit_email        = "actions@github.com"
+  commit_author       = "github-actions"
+  commit_email        = "github-actions[bot]@users.noreply.github.com"
   overwrite_on_create = true
 }
 
@@ -17,7 +17,7 @@ resource "github_repository_file" "terraform" {
   file                = ".gitignore"
   content             = file("./res/terraform.gitignore")
   commit_message      = "Update .gitignore"
-  commit_author       = "actions"
-  commit_email        = "actions@github.com"
+  commit_author       = "github-actions"
+  commit_email        = "github-actions[bot]@users.noreply.github.com"
   overwrite_on_create = true
 }
